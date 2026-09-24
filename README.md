@@ -2,7 +2,7 @@
 
 A portfolio website for **Nimesh Chauhan** (`Weirdnemo`), Reinforcement Learning Engineer specializing in astrodynamics, spacecraft guidance, and drone technologies.
 
-Directly inspired by the minimalist craft of [pragnyanramtha.dev](https://pragnyanramtha.dev/), this site features rolling character navigation, a dark/light theme switcher, a faded coordinate grid background, a custom reticle cursor that inverts against whatever it's over, left-accented project timelines, a merged blogs and research section, an interactive real-time orbital mechanics and drone flight simulation canvas, and a lightweight admin panel for editing content without redeploying.
+This site features rolling character navigation, a dark/light theme switcher, a faded coordinate grid background, a custom reticle cursor that inverts against whatever it's over, left-accented project timelines, a merged blogs and research section, an interactive real-time orbital mechanics and drone flight simulation canvas, and a lightweight admin panel for editing content without redeploying.
 
 This project is open source. Fork it, swap in your own data, and it's your site.
 
