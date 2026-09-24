@@ -68,10 +68,6 @@
   }
 }
 
-/* Fixed grid layer — position:fixed always creates its own stacking
-   context, so this paints reliably behind content regardless of
-   parent z-index/positioning quirks. Faded via mask: 100% brightness
-   top-left, ~2% bottom-right. */
 .grid-background {
   position: fixed;
   inset: 0;

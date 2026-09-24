@@ -5,8 +5,6 @@ import { TargetCursor } from './TargetCursor';
 const TOKEN_KEY = 'admin_token';
 type SaveState = 'idle' | 'saving' | 'saved' | 'error';
 
-// Pre-filled templates for "+ Add" — just replace the placeholder text/links,
-// no need to know the JSON shape.
 const emptyProject: Project = {
   title: 'New Project Title',
   tagline: 'One-line description of what it does',
@@ -58,8 +56,6 @@ const SaveButton: React.FC<{ state: SaveState; onClick: () => void; label?: stri
   </button>
 );
 
-// Manages one editable array (projects / blogs / research): local edits,
-// delete (persists immediately), add (local only until "Save section").
 function useListSection<T>(field: 'projects' | 'blogs' | 'research', initial: T[], token: string) {
   const [items, setItems] = useState<T[]>(initial);
   const [state, setState] = useState<SaveState>('idle');
@@ -279,8 +275,6 @@ export const AdminPage: React.FC = () => {
       .finally(() => setLoading(false));
   }, [token]);
 
-  // These are called unconditionally on every render (rules-of-hooks) —
-  // they simply operate on empty arrays until data has loaded.
   const projectsSection = useListSection<Project>('projects', projects, token || '');
   const blogsSection = useListSection<BlogPost>('blogs', blogs, token || '');
   const researchSection = useListSection<ResearchPaper>('research', research, token || '');

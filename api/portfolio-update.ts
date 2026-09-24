@@ -3,9 +3,6 @@ import { portfolioData as defaultData } from '../src/data/portfolioData.js';
 
 const redis = Redis.fromEnv();
 const KEY = 'portfolio:data';
-
-// Only these top-level fields are editable from the admin panel. Bio/social
-// fields stay fixed in the codebase on purpose.
 const EDITABLE_FIELDS = ['resumeUrl', 'projects', 'blogs', 'research'] as const;
 
 export default async function handler(req: any, res: any) {

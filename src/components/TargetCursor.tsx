@@ -1,15 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const CORNER_PADDING = 8;   // gap between element edge and bracket when locked on a target
-const IDLE_SIZE = 32;       // size of the idle rotating square
-const EASE = 0.25;          // corner box position/size easing
-const DOT_EASE = 0.35;      // dot easing (snappier, feels "free")
+const CORNER_PADDING = 8;
+const IDLE_SIZE = 32;
+const EASE = 0.25;
+const DOT_EASE = 0.35;
 
-// Wiggle (velocity-reactive translate spring on the clamped corners)
-const WIGGLE_OFFSET_FACTOR = 7.5;  // px of translate per px/frame of cursor velocity
-const WIGGLE_MAX_OFFSET = 100;       // px clamp
-const WIGGLE_STIFFNESS = 0.05;     // spring pull toward target
-const WIGGLE_DAMPING = 0.72;       // velocity decay (lower = more overshoot/bounce)
+const WIGGLE_OFFSET_FACTOR = 7.5;
+const WIGGLE_MAX_OFFSET = 100;
+const WIGGLE_STIFFNESS = 0.05;
+const WIGGLE_DAMPING = 0.72;
 
 interface Box {
   x: number;
@@ -45,7 +44,6 @@ export const TargetCursor: React.FC = () => {
   }, [hovering]);
 
   useEffect(() => {
-    // Only enable on non-touch devices
     if (window.matchMedia('(pointer: coarse)').matches) return;
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -87,21 +85,17 @@ export const TargetCursor: React.FC = () => {
     let animId: number;
 
     const update = () => {
-      // Dot: always free, always following raw mouse position
       dotPos.current.x = lerp(dotPos.current.x, mouse.current.x, DOT_EASE);
       dotPos.current.y = lerp(dotPos.current.y, mouse.current.y, DOT_EASE);
       if (dotRef.current) {
         dotRef.current.style.transform = `translate3d(${dotPos.current.x}px, ${dotPos.current.y}px, 0)`;
       }
 
-      // Raw per-frame cursor velocity, used to drive the wiggle spring
       const vx = dotPos.current.x - prevDotPos.current.x;
       const vy = dotPos.current.y - prevDotPos.current.y;
       prevDotPos.current.x = dotPos.current.x;
       prevDotPos.current.y = dotPos.current.y;
 
-      // Corner box: idles as a fixed-size square centered on the dot,
-      // eases into the hovered target's bounding box when one is active
       const bt =
         boxTarget.current ?? {
           x: dotPos.current.x - IDLE_SIZE / 2,
@@ -121,7 +115,6 @@ export const TargetCursor: React.FC = () => {
         cornersRef.current.style.height = `${box.current.h}px`;
       }
 
-      // Wiggle: lateral/vertical shove based on cursor velocity, only while clamped
       const targetX = hoveringRef.current ? clamp(vx * WIGGLE_OFFSET_FACTOR, -WIGGLE_MAX_OFFSET, WIGGLE_MAX_OFFSET) : 0;
       const targetY = hoveringRef.current ? clamp(vy * WIGGLE_OFFSET_FACTOR, -WIGGLE_MAX_OFFSET, WIGGLE_MAX_OFFSET) : 0;
 
