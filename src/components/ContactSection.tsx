@@ -6,11 +6,11 @@ export const ContactSection: React.FC = () => {
   const portfolioData = usePortfolioData();
 
   return (
-    <section className="py-10" id="contact">
-      <div className="space-y-6 text-center">
-        <div className="space-y-4">
-          <h2 className="font-bold text-3xl text-primary/90">Let's work together.</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground text-base">
+    <section className="py-8 sm:py-10" id="contact">
+      <div className="space-y-5 sm:space-y-6 text-center">
+        <div className="space-y-3 sm:space-y-4">
+          <h2 className="font-bold text-2xl sm:text-3xl text-primary/90">Let's work together.</h2>
+          <p className="mx-auto max-w-2xl text-muted-foreground text-sm sm:text-base">
             I'm always interested in new opportunities, aerospace research, and ambitious RL engineering projects. Whether you have a project in mind or just want to chat about tech, I'd love to hear from you.
           </p>
         </div>

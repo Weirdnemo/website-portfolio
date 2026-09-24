@@ -6,14 +6,14 @@ export const Hero: React.FC = () => {
   const portfolioData = usePortfolioData();
 
   return (
-    <section className="pt-12">
+    <section className="pt-8 sm:pt-12">
       <div className="space-y-2">
-        <p className="font-normal text-muted-foreground text-base">hi there👋, I'm</p>
+        <p className="font-normal text-muted-foreground text-sm sm:text-base">hi there👋, I'm</p>
         <div>
-          <h1 className="font-bold text-primary/90 text-4xl tracking-tight">
+          <h1 className="font-bold text-primary/90 text-3xl sm:text-4xl tracking-tight">
             {portfolioData.name}
           </h1>
-          <div className="flex flex-col gap-0 font-normal text-primary/90 text-base">
+          <div className="flex flex-col gap-0 font-normal text-primary/90 text-sm sm:text-base">
             <span>{portfolioData.pronouns}</span>
             <span>{portfolioData.role}</span>
           </div>

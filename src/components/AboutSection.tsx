@@ -2,10 +2,10 @@ import React from 'react';
 
 export const AboutSection: React.FC = () => {
   return (
-    <div id="aboutme" className="py-10">
+    <div id="aboutme" className="py-8 sm:py-10">
       <h2 className="font-medium text-primary/90 text-base">about me.</h2>
 
-      <ul className="mt-4 space-y-2 text-muted-foreground text-base">
+      <ul className="mt-3 sm:mt-4 space-y-1.5 sm:space-y-2 text-muted-foreground text-sm sm:text-base">
         <li className="flex gap-2">
           <span className="text-primary/40 mt-0.5 select-none shrink-0">•</span>
           <span>
@@ -16,14 +16,14 @@ export const AboutSection: React.FC = () => {
         <li className="flex gap-2">
           <span className="text-primary/40 mt-0.5 select-none shrink-0">•</span>
           <span>
-            I built <strong className="font-bold text-primary underline-offset-4"><a href="https://pypi.org/project/exorl/" target="_blank" rel="noopener noreferrer" className="font-bold text-primary italic underline underline-offset-4 hover:text-primary/80 transition-colors">ExoRL</a></strong> solo a planetary science simulation &amp; RL toolkit published on PyPI
+            I built <strong className="font-bold text-primary underline-offset-4"><a href="https://pypi.org/project/exorl/" target="_blank" rel="noopener noreferrer" className="font-bold text-primary italic underline underline-offset-4 hover:text-primary/80 transition-colors">ExoRL</a></strong> solo — a planetary science simulation &amp; RL toolkit published on PyPI
           </span>
         </li>
 
         <li className="flex gap-2">
           <span className="text-primary/40 mt-0.5 select-none shrink-0">•</span>
           <span>
-            I developed <strong className="font-bold text-primary underline-offset-4"><a href="https://github.com/Weirdnemo/UntumbleRL" target="_blank" rel="noopener noreferrer" className="font-bold text-primary underline underline-offset-4 hover:text-primary/80 transition-colors">UntumbleRL</a></strong> for spacecraft detumbling partially deployed on real satellites and aligned with JAXA's CRD2 debris removal mission
+            I developed <strong className="font-bold text-primary underline-offset-4"><a href="https://github.com/Weirdnemo/UntumbleRL" target="_blank" rel="noopener noreferrer" className="font-bold text-primary underline underline-offset-4 hover:text-primary/80 transition-colors">UntumbleRL</a></strong> for spacecraft detumbling — partially deployed on real satellites and aligned with JAXA's CRD2 debris removal mission
           </span>
         </li>
 
