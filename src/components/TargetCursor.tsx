@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const CORNER_PADDING = 8;
-const IDLE_SIZE = 32;
-const EASE = 0.25;
+const CORNER_PADDING = 1;
+const IDLE_SIZE = 27;
+const EASE = 0.5;
 const DOT_EASE = 0.35;
 
 const WIGGLE_OFFSET_FACTOR = 7.5;
@@ -161,10 +161,10 @@ export const TargetCursor: React.FC = () => {
         >
           {/* Wiggle layer — velocity-reactive translate, only active while clamped */}
           <div ref={wiggleRef} className="absolute inset-0" style={{ willChange: 'transform' }}>
-            <span className="absolute top-0 left-0 w-3.5 h-3.5 border-t-[3px] border-l-[3px] border-white" />
-            <span className="absolute top-0 right-0 w-3.5 h-3.5 border-t-[3px] border-r-[3px] border-white" />
-            <span className="absolute bottom-0 left-0 w-3.5 h-3.5 border-b-[3px] border-l-[3px] border-white" />
-            <span className="absolute bottom-0 right-0 w-3.5 h-3.5 border-b-[3px] border-r-[3px] border-white" />
+            <span className="absolute top-0 left-0 w-2.5 h-2.5 border-t-[3px] border-l-[3px] border-white" />
+            <span className="absolute top-0 right-0 w-2.5 h-2.5 border-t-[3px] border-r-[3px] border-white" />
+            <span className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-[3px] border-l-[3px] border-white" />
+            <span className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-[3px] border-r-[3px] border-white" />
           </div>
         </div>
       </div>
