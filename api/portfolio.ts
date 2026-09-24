@@ -1,5 +1,5 @@
 import { Redis } from '@upstash/redis';
-import { portfolioData as defaultData } from '../src/data/portfolioData';
+import { portfolioData as defaultData } from '../src/data/portfolioData.js';
 
 // Redis.fromEnv() reads UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN,
 // which the Vercel <-> Upstash Marketplace integration injects automatically.

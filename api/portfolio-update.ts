@@ -1,5 +1,5 @@
 import { Redis } from '@upstash/redis';
-import { portfolioData as defaultData } from '../src/data/portfolioData';
+import { portfolioData as defaultData } from '../src/data/portfolioData.js';
 
 const redis = Redis.fromEnv();
 const KEY = 'portfolio:data';
