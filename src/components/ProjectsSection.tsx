@@ -1,8 +1,10 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import { usePortfolioData } from '../hooks/usePortfolioData';
 
 export const ProjectsSection: React.FC = () => {
+  const portfolioData = usePortfolioData();
+
   return (
     <div id="projects" className="py-10">
       <h2 className="font-medium text-primary/90 text-base">projects.</h2>

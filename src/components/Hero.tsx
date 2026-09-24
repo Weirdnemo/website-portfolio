@@ -1,8 +1,10 @@
 import React from 'react';
 import { Mail, Github, Linkedin } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import { usePortfolioData } from '../hooks/usePortfolioData';
 
 export const Hero: React.FC = () => {
+  const portfolioData = usePortfolioData();
+
   return (
     <section className="pt-12">
       <div className="space-y-2">

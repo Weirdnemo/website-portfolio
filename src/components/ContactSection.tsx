@@ -1,8 +1,10 @@
 import React from 'react';
 import { Mail, FileText, Github, Linkedin } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import { usePortfolioData } from '../hooks/usePortfolioData';
 
 export const ContactSection: React.FC = () => {
+  const portfolioData = usePortfolioData();
+
   return (
     <section className="py-10" id="contact">
       <div className="space-y-6 text-center">

@@ -9,6 +9,8 @@ import { SkillsSection } from './components/SkillsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { TargetCursor } from './components/TargetCursor';
+import { AdminPage } from './components/AdminPage';
+import { PortfolioDataProvider } from './hooks/usePortfolioData';
 
 export const App: React.FC = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
@@ -35,29 +37,35 @@ export const App: React.FC = () => {
     }
   };
 
+  if (window.location.pathname.startsWith('/admin')) {
+    return <AdminPage />;
+  }
+
   return (
-    <div className="w-screen min-h-screen m-0 p-0 overflow-x-hidden text-foreground transition-colors duration-200 relative selection:bg-primary selection:text-primary-foreground">
-      <div className="grid-background" />
+    <PortfolioDataProvider>
+      <div className="w-screen min-h-screen m-0 p-0 overflow-x-hidden text-foreground transition-colors duration-200 relative selection:bg-primary selection:text-primary-foreground">
+        <div className="grid-background" />
 
-      {/* Main Container - exact 1:1 width & padding from pragnyanramtha.dev */}
-      <div className="mx-auto px-4 pt-6 sm:pt-12 w-full lg:w-2/3 xl:w-1/2 text-foreground">
-        <Header theme={theme} toggleTheme={toggleTheme} />
+        {/* Main Container - exact 1:1 width & padding from pragnyanramtha.dev */}
+        <div className="mx-auto px-4 pt-6 sm:pt-12 w-full lg:w-2/3 xl:w-1/2 text-foreground">
+          <Header theme={theme} toggleTheme={toggleTheme} />
 
-        <main id="main-content" className="min-h-screen">
-          <Hero />
-          <AboutSection />
-          <ExperienceSection />
-          <ProjectsSection />
-          <BlogsResearchSection />
-          <SkillsSection />
-          <ContactSection />
-          <Footer />
-        </main>
+          <main id="main-content" className="min-h-screen">
+            <Hero />
+            <AboutSection />
+            <ExperienceSection />
+            <ProjectsSection />
+            <BlogsResearchSection />
+            <SkillsSection />
+            <ContactSection />
+            <Footer />
+          </main>
+        </div>
+
+        {/* Target Reticle Cursor */}
+        <TargetCursor />
       </div>
-
-      {/* Target Reticle Cursor */}
-      <TargetCursor />
-    </div>
+    </PortfolioDataProvider>
   );
 };
 
