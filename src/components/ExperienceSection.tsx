@@ -21,7 +21,7 @@ export const ExperienceSection: React.FC = () => {
                   at, <span className="ml-1 text-primary/90 font-medium">Oil and Natural Gas Corporation (ONGC)</span>
                 </p>
               </div>
-              <p className="text-muted-foreground text-xs sm:text-sm">2024</p>
+              <p className="text-muted-foreground text-xs sm:text-sm">2026</p>
             </div>
 
             <ul className="space-y-1 mt-1 pl-3 text-muted-foreground text-xs sm:text-sm text-justify list-disc">
@@ -62,7 +62,7 @@ export const ExperienceSection: React.FC = () => {
                   at, <span className="ml-1 text-primary/90 font-medium">College AI Club</span>
                 </p>
               </div>
-              <p className="text-muted-foreground text-xs sm:text-sm">2023 - 2024</p>
+              <p className="text-muted-foreground text-xs sm:text-sm">2024 - 2025</p>
             </div>
 
             <ul className="space-y-1 mt-1 pl-3 text-muted-foreground text-xs sm:text-sm text-justify list-disc">
